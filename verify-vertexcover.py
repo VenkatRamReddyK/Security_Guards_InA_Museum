@@ -1,7 +1,7 @@
 import copy;
 vcset=[]
-kotilist=[]
-kotilist1=[]
+list=[]
+list1=[]
 inputdict={}
 visitedVertex={};
 edgeCount={};
@@ -20,15 +20,15 @@ def intersect(a, b):
      return list(set(a) & set(b))
         
 def main():
-    global kotilist1,kotilist,inputdict,visitedVertex,edgecount,bufferdict,sortedkeys,edgeCount;
+    global list1,list,inputdict,visitedVertex,edgecount,bufferdict,sortedkeys,edgeCount;
     edgecount=0;    
     coveredcount=0;
     uncoveredcount=0;
     fread2 = open("output.txt", "r")  
     kotifile=fread2.read();
-    kotilist=kotifile.rstrip('x').split('x');
+    list=kotifile.rstrip('x').split('x');
 
-    outputlen=len(kotilist);
+    outputlen=len(list);
     fread = open("graph-4.txt", "r")
     input=fread.read();
      
@@ -43,7 +43,7 @@ def main():
     edgecount/=2
     bufferdict = copy.deepcopy(inputdict)
     count=0; count1=0;
-    for vkey in kotilist:
+    for vkey in list:
         for edge in inputdict[vkey]:
             if inputdict.has_key(vkey) and inputdict.has_key(edge):
                 if edge in bufferdict[vkey]:
